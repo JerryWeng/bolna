@@ -34,7 +34,8 @@ chunks = []
 interruption_message = 0
 
 # WebSocket server address based on connection type
-server_url = "ws://localhost:5001" #os.getenv("BOLNA_WS_SERVER_URL")
+part_url = os.getenv("BOLNA_WS_SERVER_URL")
+server_url = f"wss://{part_url}"
 assistant_id = os.getenv("ASSISTANT_ID") 
 logging.info(f"Assistant ID {os.getenv('ASSISTANT_ID') }")
 uri = f"{server_url}/chat/v1/{assistant_id}"
